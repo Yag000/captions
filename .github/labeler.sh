@@ -6,16 +6,16 @@
 # Define the regex patterns
 pattern1="[0-9]{4}/[^/]+/[^/]+"
 pattern2="[0-9]{4}/shorts/[^/]+/[^/]+"
+pattern3="[0-9]{4}/blog/[^/]+/[^/]+"
 
 # Use find and grep to search for matching folders
 # and keep only the las part of the path
-
-a=$(find . -type d | grep -E "$pattern1" | awk -F/ '{print $NF}')
-b=$(find . -type d | grep -E "$pattern2" | awk -F/ '{print $NF}')
+a=$(find . -type d | grep -E "$pattern1" | grep -v "/shorts/" | grep -v "/blog/" | awk -F/ '{print $NF}')
+b=$(find . -type d | grep -E "$pattern2" | grep -v "/blog/" | awk -F/ '{print $NF}')
+c=$(find . -type d | grep -E "$pattern3" | grep -v "/shorts/" | awk -F/ '{print $NF}')
 
 # Join the two lists
-languages=$(cat <(echo "$a") <(echo "$b") | sort | uniq)
-
+languages=$(cat <(echo "$a") <(echo "$b") <(echo "$c") | sort | uniq)
 
 labeler_file=".github/labeler.yml"
 

@@ -32,10 +32,6 @@ Croatian:
 - changed-files:
   - any-glob-to-any-file: '**/croatian/*'
 
-Cube-shadow-puzzle:
-- changed-files:
-  - any-glob-to-any-file: '**/cube-shadow-puzzle/*'
-
 Czech:
 - changed-files:
   - any-glob-to-any-file: '**/czech/*'
@@ -112,25 +108,13 @@ Malay:
 - changed-files:
   - any-glob-to-any-file: '**/malay/*'
 
-Mandelbrot:
-- changed-files:
-  - any-glob-to-any-file: '**/mandelbrot/*'
-
 Marathi:
 - changed-files:
   - any-glob-to-any-file: '**/marathi/*'
 
-Newton-art-puzzle:
-- changed-files:
-  - any-glob-to-any-file: '**/newton-art-puzzle/*'
-
 Norwegian:
 - changed-files:
   - any-glob-to-any-file: '**/norwegian/*'
-
-On-shorts:
-- changed-files:
-  - any-glob-to-any-file: '**/on-shorts/*'
 
 Persian:
 - changed-files:
@@ -164,17 +148,9 @@ Slovenian:
 - changed-files:
   - any-glob-to-any-file: '**/slovenian/*'
 
-Some1-results:
-- changed-files:
-  - any-glob-to-any-file: '**/some1-results/*'
-
 Spanish:
 - changed-files:
   - any-glob-to-any-file: '**/spanish/*'
-
-Subset-sum:
-- changed-files:
-  - any-glob-to-any-file: '**/subset-sum/*'
 
 Swedish:
 - changed-files:
