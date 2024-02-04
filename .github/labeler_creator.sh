@@ -11,7 +11,7 @@ do
     label_name=$(echo $language | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}')
     echo "$label_name:" >> .github/labeler.yml
     echo "- changed-files:" >> .github/labeler.yml
-    echo " - '*/$language/*'" >> .github/labeler.yml
+    echo "  - any-glob-to-any-file: '*/$language/*'" >> .github/labeler.yml
     echo "" >> .github/labeler.yml
 done
 
