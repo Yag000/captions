@@ -1,0 +1,32 @@
+name: "Labeler language update"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-labeler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run labeler script
+        run: ./.github/labeler.sh
+
+      - name: Check for modifications in labeler.yml
+        id: check_modifications
+        run: |
+          git diff --exit-code --quiet || echo "File modified"
+        continue-on-error: true
+
+      - name: Commit and push changes
+        if: steps.check_modifications.outputs.code == '0'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/labeler.yml
+          git commit -m "Update labeler.yml"
+          git push origin main
